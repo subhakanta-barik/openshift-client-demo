@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.fabric8</groupId>
+        <artifactId>openshift-client-demo-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>openshift-client-demo-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>openshift-client-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>openshift-client-demo</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <version.fabric8.client>${fabric8.version}</version.fabric8.client>
+        <!-- Should be same as one required by Fabric8 K8s Client -->
+        <commons-compress.version>1.25.0</commons-compress.version>
+        <slf4j-api.version>1.7.5</slf4j-api.version>
+        <slf4j-simple.version>1.7.28</slf4j-simple.version>
+        <json.version>20230227</json.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>kubernetes-client</artifactId>
+<!--            <exclusions>-->
+<!--              <exclusion>-->
+<!--                <groupId>io.fabric8</groupId>-->
+<!--                <artifactId>kubernetes-httpclient-okhttp</artifactId>-->
+<!--              </exclusion>-->
+<!--            </exclusions>-->
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.fabric8</groupId>-->
+<!--            <artifactId>kubernetes-httpclient-vertx</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>openshift-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>openshift-server-mock</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>${commons-compress.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+</project>
